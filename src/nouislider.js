@@ -1,5 +1,8 @@
 'use strict';
 angular.module('nouislider', []);
+/*
+//@ sourceMappingURL=app.js.map
+*/
 'use strict';
 angular.module('nouislider').directive('slider', function () {
   return {
@@ -8,6 +11,7 @@ angular.module('nouislider').directive('slider', function () {
       start: '@',
       step: '@',
       end: '@',
+      connect: '@',
       ngModel: '=',
       ngFrom: '=',
       ngTo: '='
@@ -28,7 +32,7 @@ angular.module('nouislider').directive('slider', function () {
             scope.ngTo || scope.end
           ],
           step: scope.step || 1,
-          connect: true
+          connect: scope.connect || true
         }).change(function (ev) {
           var from, to, _ref;
           _ref = slider.val(), from = _ref[0], to = _ref[1];
@@ -69,7 +73,8 @@ angular.module('nouislider').directive('slider', function () {
           ],
           start: scope.ngModel || scope.start,
           step: scope.step || 1,
-          handles: 1
+          handles: 1,
+          connect: scope.connect || true
         }).change(function (ev) {
           parsedValue = slider.val();
           return scope.$apply(function () {
@@ -85,4 +90,6 @@ angular.module('nouislider').directive('slider', function () {
       }
     }
   };
-});
+});  /*
+//@ sourceMappingURL=slider.js.map
+*/

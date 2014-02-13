@@ -7,6 +7,7 @@ angular.module("nouislider")
       start: "@"
       step: "@"
       end: "@"
+      connect: "@"
       ngModel: "="
       ngFrom: "="
       ngTo: "="
@@ -22,7 +23,7 @@ angular.module("nouislider")
           range: [scope.start, scope.end]
           start: [scope.ngFrom or scope.start, scope.ngTo or scope.end]
           step: scope.step or 1
-          connect: true
+          connect: scope.connect or true
         ).change((ev) ->
           [from, to] = slider.val()
 
@@ -55,6 +56,7 @@ angular.module("nouislider")
           start: scope.ngModel or scope.start,
           step: scope.step or 1
           handles: 1
+          connect: scope.connect or true
         ).change((ev) ->
           parsedValue = slider.val()
 
