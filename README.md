@@ -29,6 +29,10 @@ angular.module('MyApp', ['nouislider']);
 <div slider ng-from="test.from" ng-to="test.to" start=0 end=100 step=5></div>
 ```
 
+### Restriction:
+
+The slider only handles integers. A step size like 0.1 is not supported.
+
 That's it!
 
 ![example](https://raw2.github.com/vasyabigi/angular-nouislider/master/example.jpg "angular-nouislider")
